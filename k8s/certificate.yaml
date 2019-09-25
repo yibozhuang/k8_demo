@@ -9,11 +9,13 @@ spec:
     kind: ClusterIssuer
   commonName: yibozhuang.me
   dnsNames:
+    - yibozhuang.me
     - kube.yibozhuang.me
   acme:
     config:
       - http01:
           ingressClass: nginx
         domains:
+          - yibozhuang.me
           - kube.yibozhuang.me
 
