@@ -1,0 +1,19 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: yibozhuang-me-tls
+spec:
+  secretName: yibozhuang-me
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: yibozhuang.me
+  dnsNames:
+    - kube.yibozhuang.me
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - kube.yibozhuang.me
+
